@@ -1,6 +1,12 @@
 # Introduction
 
-In QA Environment, configure your application to use this Mock Service (instead of real NASA Sound API). Based on API Key, we return various types of canned response to verify application behavior. For eg, Stream URL is empty etc which is hard to simulate with real service.
+In QA Environment, configure your application to use this Mock Service (instead of real NASA Sound API). Based on API Key, we can return various types of canned response to verify application behavior. For eg, Stream URL is empty etc which is hard to simulate with real service. Java Concurrency - AutomicInteger is used for consistent 'limit-remaining' header. 
+
+# Technologies
+
+- Java 8 (Stream API is used to filter & limit sound track records) 
+- Spring MVC
+- Jetty Embedded Servlet Container
 
 # Running the Service
 
