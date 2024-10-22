@@ -9,7 +9,7 @@ name: Push the Docker image to AWS ECR Repo
       runs-on: ubuntu-latest
       steps:
         - name: Checkout
-          uses: actions/checkout@v2
+          uses: actions/checkout@v4
 
         - name: Configure AWS credentials
           uses: aws-actions/configure-aws-credentials@v1
@@ -25,6 +25,7 @@ name: Push the Docker image to AWS ECR Repo
         - name: Get commit hash
           id: get-commit-hash
           run: echo "::set-output name=commit-hash::$(git rev-parse --short HEAD)"
+    
         - name: Get timestamp
           id: get-timestamp
           run: echo "::set-output name=timestamp::$(date +'%Y-%m-%d-%H-%M')"
