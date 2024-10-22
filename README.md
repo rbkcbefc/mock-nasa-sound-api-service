@@ -30,3 +30,4 @@ Response
 
 - Link:  https://github.com/cicdaas/nasa-sound-api-automation
 
+# Github Actions are configured to build Docker Image and Push to ECR Repo
