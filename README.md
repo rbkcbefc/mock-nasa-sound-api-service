@@ -31,3 +31,24 @@ Response
 - Link:  https://github.com/cicdaas/nasa-sound-api-automation
 
 # Github Actions are configured to build Docker Image and Push to ECR Repo
+~ In the github repository settings, 
+https://github.com/rbkcbefc/mock-nasa-sound-api-service/settings/secrets/actions
+
+add four secrets
+! AWS_ACCESS_KEY_ID
+! AWS_SECRET_ACCESS_KEY
+! AWS_REGION
+! REPO_NAME 
+
+Eg: REPO_NAME = mock-nasa-sound-api-service
+
+To test locally,
+docker images
+mvn clean package
+docker build -t mock-nasa-sound-api-service .
+docker images
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <<ecr_id>>>.dkr.ecr.us-east-1.amazonaws.com
+
+docker push <<ecr_id>>>.dkr.ecr.us-east-1.amazonaws.com/mock-nasa-sound-api-service:latest
+
