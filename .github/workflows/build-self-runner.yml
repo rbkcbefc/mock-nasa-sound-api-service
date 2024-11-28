@@ -15,6 +15,12 @@ jobs:
         - name: Build project with Maven
           run: mvn -B package --file pom.xml            
 
+        - name: Configure AWS Credentials
+          uses: aws-actions/configure-aws-credentials@v4
+          with:
+            role-to-assume: arn:aws:iam::318075166670:role/ec2-core-role
+            aws-region: ${{ secrets.AWS_REGION }}
+
         - name: Login to Amazon ECR
           id: login-ecr
           uses: aws-actions/amazon-ecr-login@v2
