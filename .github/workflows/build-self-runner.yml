@@ -1,9 +1,9 @@
-name: Build & Push Docker images for AMD & ARM Architectures to the AWS ECR Repo
+name: Build & Push Docker images on Self Runner for ARM Architectures to the AWS ECR Repo
 
 on:
   push:
     branches:
-      - ghactions-dev
+      - master
 
 jobs:
   Build:
@@ -41,5 +41,3 @@ jobs:
           run: |
             docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
             docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-            
-        #TODO: commit & push
